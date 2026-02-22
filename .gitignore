@@ -1,0 +1,6 @@
+.DS_Store
+prep
+prep.exe
+*.o
+*.a
+*.ppu

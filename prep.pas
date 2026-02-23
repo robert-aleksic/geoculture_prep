@@ -6,7 +6,7 @@ uses
 
 const
   exiffile = 'exif.txt';
-  photofolder='../data/photo/';
+  photofolder='..\data\photo\';
 
   maxinfiles=1000;
   maxauthors=200;

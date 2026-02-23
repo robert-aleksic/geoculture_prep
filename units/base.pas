@@ -616,6 +616,7 @@ uses
      begin
         path := extractfiledir (pattern);
         repeat
+           writeln (res.name);
            name := path + '/'+ res.name;
            fileattr := filegetattr (name);
            if fileattr and faDirectory = 0

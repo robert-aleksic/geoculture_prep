@@ -618,7 +618,7 @@ uses
         repeat
            name := path + '/'+ res.name;
            fileattr := filegetattr (name);
-           writeln (fileattr, ' *** ' res.name);
+           writeln (fileattr, ' *** ', res.name);
            if fileattr and faDirectory = 0
            then process (name)
         until findnext(res) <> 0

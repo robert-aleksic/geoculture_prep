@@ -248,7 +248,7 @@ begin
   traverse (photofolder+'*.*', @addfile);
   {$endif}
   sortfiles;
-  for i := 1 to inpfnum do writeln (i,' ! ',inpf[i].n);
+  //for i := 1 to inpfnum do writeln (i,' ! ',inpf[i].n);
   exifscan;
 
   csvheadersstart ('headers.txt');

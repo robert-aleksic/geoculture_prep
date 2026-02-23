@@ -55,6 +55,17 @@ type
              end;
 
 
+function winrep (s:string) : string;
+var i : integer;
+begin
+  winrep := '';
+  for i := 1 to length(s) do
+    case s[i] of
+      '/' : winrep := winrep + '\'
+      else  winrep := winrep + s[i]
+    end
+end;
+
 var
   inpf     : array [0..maxinfiles] of filerec;
   inpfnum  : integer;
@@ -224,8 +235,8 @@ var
   end;
 
 var
-  cf : csvfile;
-  f  : text;
+  cf  : csvfile;
+  f,g : text;
 
   apos,i,j : integer;
 
@@ -264,8 +275,11 @@ begin
   writeln ('processing points...');
 
   assign (f,'copyrenamed.sh');
+  assign (g,'copyrenamed.bat');
   rewrite (f);
+  rewrite (g);
   writeln (f,'echo copying images..');
+  writeln (g,'echo copying images..');
   points := 0;
   csvreset (cf,'../data/points.csv');
   while not cf.eot do
@@ -313,6 +327,7 @@ begin
                then writeln ('!! image not found  : ',col[2])
                else begin
                       writeln (f,'cp "',photofolder,imgf,'" ../site/images/',col[2],'.jpg');
+                      writeln (g,'copy "',winrep(photofolder+imgf),'" ..\site\images\',col[2],'.jpg');
                       imgf := copy (imgf,1,4)+'.jpg'
                     end
              end;
@@ -327,6 +342,7 @@ begin
   csvclose (cf);
   // writeln (f,'./exif.sh');
   close (f);
+  close (g);
 
   csvheadersstop;
 

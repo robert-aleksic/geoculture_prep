@@ -1,4 +1,6 @@
 .DS_Store
+copyrenamed.sh
+copyrenamed.bat
 prep
 prep.exe
 *.o

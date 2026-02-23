@@ -6,7 +6,7 @@ uses
 
 const
   exiffile = 'exif.txt';
-  photofolder='..\data\photo\';
+  photofolder='../data/photo/';
 
   maxinfiles=1000;
   maxauthors=200;
@@ -242,7 +242,11 @@ var
 
 begin
   inpfnum := 0;
+  {$ifdef win32}
+  traverse (winrep(photofolder)+'*.*', @addfile);
+  {$else}
   traverse (photofolder+'*.*', @addfile);
+  {$endif}
   sortfiles;
   for i := 1 to inpfnum do writeln (i,' ! ',inpf[i].n);
   exifscan;

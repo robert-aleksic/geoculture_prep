@@ -610,8 +610,7 @@ uses
     path, name : string;
     fileattr : longint;
     attr : integer;
-
-  begin
+   begin
      attr := faAnyFile;
      if findfirst (pattern, attr, res) = 0 then
      begin

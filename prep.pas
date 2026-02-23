@@ -242,11 +242,13 @@ var
 
 begin
   inpfnum := 0;
+
   {$ifdef win32}
-  traverse (winrep(photofolder)+'*.*', @addfile);
+    traverse (winrep(photofolder)+'*.*', @addfile);
   {$else}
-  traverse (photofolder+'*.*', @addfile);
+    traverse (photofolder+'*.*', @addfile);
   {$endif}
+
   sortfiles;
   //for i := 1 to inpfnum do writeln (i,' ! ',inpf[i].n);
   exifscan;

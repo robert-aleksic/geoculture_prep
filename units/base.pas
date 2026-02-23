@@ -618,8 +618,8 @@ uses
         repeat
            name := path + '/'+ res.name;
            fileattr := filegetattr (name);
-           writeln (fileattr, ' *** ', res.name);
-           if fileattr and faDirectory = 0
+           //writeln (fileattr, ' *** ', res.name);
+           if (fileattr and faDirectory = 0) or (fileattr = -1)
            then process (name)
         until findnext(res) <> 0
      end;

@@ -202,13 +202,8 @@ var
     p := 0;
     for i := 1 to authors do
       with author[i] do
-        if fn+' '+ln = name
+        if (trim(ln+' '+fn) = name) or (trim (fn+' '+ln) = name)
         then p := i;
-    if p = 0
-    then for i := 1 to authors do
-           with author[i] do
-             if ln+' '+fn = name
-             then p := i;
     authorfind := p
   end;
 

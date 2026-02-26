@@ -17,7 +17,7 @@ points
   7 !   40 ! tehnika
   8 !   12 ! format
   9 !   69 ! vlasnik
- 10 !   25 ! link vlasnik
+ 10 !   43 ! link vlasnik
  11 !   64 ! foto kredits
  12 !  1087 ! glavni narativ uz djelo )pojavljije se kao prvi pasus)
  13 !  1335 ! sekundarni narativ uz djelo, slijedi nakon prvog, služi obično da se povežu pojedine tačke

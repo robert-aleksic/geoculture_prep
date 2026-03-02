@@ -1,6 +1,7 @@
 .DS_Store
 copyrenamed.sh
 copyrenamed.bat
+exif.txt
 prep
 prep.exe
 *.o

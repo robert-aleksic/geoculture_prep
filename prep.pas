@@ -281,6 +281,7 @@ begin
   rewrite (g);
   writeln (f,'echo copying images..');
   writeln (g,'echo copying images..');
+  writeln (g,'@echo off');
   points := 0;
   csvreset (cf,'../data/points.csv');
   while not cf.eot do
@@ -328,7 +329,7 @@ begin
                then writeln ('!! image not found  : ',col[2])
                else begin
                       writeln (f,'cp "',photofolder,imgf,'" ../site/images/',col[2],'.jpg');
-                      writeln (g,'copy "',winrep(photofolder+imgf),'" ..\site\images\',col[2],'.jpg');
+                      writeln (g,'copy /y "',winrep(photofolder+imgf),'" ..\site\images\',col[2],'.jpg >nul');
                       imgf := copy (imgf,1,4)+'.jpg'
                     end
              end;

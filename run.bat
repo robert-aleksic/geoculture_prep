@@ -1,3 +1,4 @@
-exif.bat
+@echo off
+call exif.bat 
 prep.exe
-copyrenamed.bat
+call copyrenamed.bat
